@@ -1,18 +1,13 @@
-import React, {Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 
-export class Search extends Component {
+const Search = () => {
   state = {
     text: ''
   };
 
 
-  static propTypes = {
-    searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
-    setAlert: PropTypes.func.isRequired
-  };
+
 
 onChange = (e) => this.setState({[e.target.name]: e.target.value });
 
@@ -57,5 +52,12 @@ onSubmit = (e) => {
     )
   }
 }
+
+Search.propTypes = {
+  searchUsers: PropTypes.func.isRequired,
+  clearUsers: PropTypes.func.isRequired,
+  showClear: PropTypes.bool.isRequired,
+  setAlert: PropTypes.func.isRequired
+};
 
 export default Search
