@@ -1,17 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types';
 
-const Search = () => {
-  state = {
-    text: ''
-  };
+const Search = ({searchUsers, showClear, clearUsers}) => {
+  const [text, setText] = useState(''); 
 
 
 
 
-onChange = (e) => this.setState({[e.target.name]: e.target.value });
+const onChange = (e) => this.setState({[e.target.name]: e.target.value });
 
-onSubmit = (e) => {
+const onSubmit = (e) => {
   e.preventDefault();
   if(this.state.text === '') {
     this.props.setAlert('Please enter something', 'light');
@@ -21,11 +19,6 @@ onSubmit = (e) => {
   }
 
 };
-
-
-  render () {
-    const {showClear, clearUsers} = this.props;
-
 
     return(
       <div>
@@ -50,7 +43,7 @@ onSubmit = (e) => {
 
       </div>
     )
-  }
+
 }
 
 Search.propTypes = {
