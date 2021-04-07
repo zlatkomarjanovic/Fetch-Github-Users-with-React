@@ -14,8 +14,8 @@ const onSubmit = (e) => {
   if(text === '') {
     setAlert('Please enter something', 'light');
   } else {
-    searchUsers(this.state.text);
-    setText(''); 
+    searchUsers(text);
+    setText('');
   }
 
 };
